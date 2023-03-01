@@ -1,0 +1,23 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "What's the weather like outside? Don't look out the window. Program an app instead.\r ## Base functionality\r - Fetch data for your city from openweathermap.org API or similar\r - Display information that you find relevant\r - Current data & forecast\r - Use this opportunity to play with CSS animations\r - Explore frameworks like tailwind, bootstrap or similar",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Domusko/WeatherApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Domusko/WeatherApp/issues"
+  },
+  "homepage": "https://github.com/Domusko/WeatherApp#readme",
+  "devDependencies": {
+    "express": "^4.18.2",
+    "jest": "^29.4.3"
+  }
+}
