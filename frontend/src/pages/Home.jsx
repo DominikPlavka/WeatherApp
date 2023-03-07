@@ -1,10 +1,19 @@
 import SearchBar from '../components/SearchBar'
+import Video from '../components/Video'
+import TopCities from '../components/TopCities'
+import CurrentDate from '../components/CurrentDate'
+import Divider from '../components/Divider'
+import "./Home.css"
 
 const Home = () => {
     return (
-        <header>
+        <div className='search-container'>
+            <TopCities />
             <SearchBar />
-        </header>
+            <Divider />
+            <CurrentDate />
+            <Video />
+        </div>
     )
 }
 

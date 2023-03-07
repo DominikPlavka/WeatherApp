@@ -14,6 +14,6 @@ app.use((req, res, next) => {
 app.use('/api/weather', weatherRoutes);
 
 //listen
-app.listen(process.env.PORT, () => {
+app.listen(process.env.REACT_APP_PORT, () => {
     console.log(`Server is running on PORT ${process.env.REACT_APP_PORT}`)
 });

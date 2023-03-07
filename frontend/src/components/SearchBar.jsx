@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-expressions */
 
 import './SearchBar.css';
-import { WiDayLightWind } from "react-icons/wi";
 import { useEffect, useState } from 'react';
 
 //require('dotenv').config({path: "../../.env"});
@@ -13,7 +12,7 @@ const SearchBar = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [weatherData, setWeatherData] = useState(null);
 
-    useEffect (()=> {
+    useEffect(() => {
         console.log(weatherData);
     }, [weatherData]);
 
@@ -37,17 +36,18 @@ const SearchBar = () => {
             setIsLoading(false);
         }
     };
-   
+
     return (
-        <header>
-            <div className="search-container">
-                <form>
-                    <input type="text" placeholder="Search..." name="search" />
-                    <button type="submit" className="submit" onClick={handleClick}>< WiDayLightWind /></button>
-                </form>
-                {isLoading && <h2>Loading...</h2>}
+        <div>
+            <form className='searchbar'>
+                <input type="text" className="bar" placeholder="Search location" name="search" />
+                <button type="submit" className="submit" onClick={handleClick}>Search</button>
+            </form>
+            <div className='loading'>
+                {isLoading && <p>Loading data</p>}
             </div>
-        </header>
+        </div>
+
     )
 }
 
