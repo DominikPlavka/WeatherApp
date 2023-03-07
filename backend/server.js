@@ -1,9 +1,19 @@
 require('dotenv').config({ path: "../.env" });
 
 const express = require('express');
-
 const app = express();
+const weatherRoutes = require('./routes/weather')
 
-app.listen(process.env.PORT);
+// middleware
+app.use((req, res, next) => {
+    console.log(req.path, req.method)
+    next()
+})
 
-console.log(`Server is running on PORT ${process.env.PORT}`)
+//routes
+app.use('/api/weather', weatherRoutes);
+
+//listen
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on PORT ${process.env.REACT_APP_PORT}`)
+});
