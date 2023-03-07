@@ -8,15 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Domusko/WeatherApp.git"
+    "url": "git+https://github.com/DominikPlavka/WeatherApp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Domusko/WeatherApp/issues"
+    "url": "https://github.com/DominikPlavka/WeatherApp/issues"
   },
-  "homepage": "https://github.com/Domusko/WeatherApp#readme",
+  "homepage": "https://github.com/DominikPlavka/WeatherApp#readme",
   "devDependencies": {
     "jest": "^29.4.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }

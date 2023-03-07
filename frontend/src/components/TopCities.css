@@ -1,0 +1,12 @@
+.cities-container {
+    margin: 50px 0 40px 0;
+    display: flex;
+}
+
+.cities {
+    flex-direction: row;
+    margin: 0 20px;
+    color: white;
+}
+
+
