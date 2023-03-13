@@ -15,6 +15,7 @@
     background-color: rgb(255, 140, 0);
     border: none;
     color: white;
+    transition: background-color 300ms ease-out;
 }
 
 .submit:hover {
