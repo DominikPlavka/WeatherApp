@@ -19,7 +19,7 @@ const CurrentDate = () => {
     }, []);
 
     return (
-        <p className="date">Local time: {time.toLocaleTimeString()} | Date: {currDate}</p>
+        <p className="date">Your local time: {time.toLocaleTimeString()} | Your local date: {currDate}</p>
     )
 }
 

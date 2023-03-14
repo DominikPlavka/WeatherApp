@@ -1,5 +1,5 @@
 import './SearchBar.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const apiKey = '9139bc6d00ad8fa87da75f7489652eef';
 
