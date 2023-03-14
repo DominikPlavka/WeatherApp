@@ -25,8 +25,3 @@
 .bar:focus {
     outline: none;
 }
-
-.loading {
-    margin-top: 10px;
-    color: white;
-}

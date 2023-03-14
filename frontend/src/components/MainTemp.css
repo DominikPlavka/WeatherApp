@@ -1,0 +1,48 @@
+p {
+    margin: 0px;
+}
+
+.temp-data {
+    margin: 40px 0 20px 0;
+    display: grid;
+    grid-template-columns: 0.2fr 2fr 1fr 0.2fr;
+    padding: 0;
+}
+
+.city {
+    display: flex;
+    justify-content: center;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.temp {
+    display: flex;
+    grid-row-start: 2;
+    font-size: 80px;
+    grid-column-start: 2;
+    margin-right: 20px;
+    justify-content: end;
+}
+
+.right-temp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-column-start: 3;
+    margin-left: 20px;
+}
+
+.temp-add {
+    font-size: 16px;
+}
+
+.icon {
+    display: inline-block;
+    width: 10%;
+    height: auto;
+}

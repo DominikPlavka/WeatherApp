@@ -6,6 +6,8 @@ import Divider from '../components/Divider'
 import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import { useEffect, useState } from 'react'
+import Heading from '../components/Heading'
+import SubHeading from '../components/SubHeading'
 import "./Home.css"
 
 const Home = () => {
@@ -26,9 +28,11 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
+    console.log(weather)
+
     return (
         <div className='search-container'>
-            <TopCities />
+            <Heading text='Search the city'/>
             <SearchBar setQuery={setQuery} />
             {weather && (
                 <div>
@@ -37,6 +41,7 @@ const Home = () => {
                 </div>
             )}
             <Divider />
+            <SubHeading text='More useful data'/>
             <CurrentDate />
         </div>
     )
