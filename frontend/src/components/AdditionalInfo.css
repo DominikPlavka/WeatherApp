@@ -1,0 +1,10 @@
+.add-info-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-data {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -8,6 +8,7 @@ import MainTemp from '../components/MainTemp'
 import { useEffect, useState } from 'react'
 import Heading from '../components/Heading'
 import SubHeading from '../components/SubHeading'
+import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
 
 const Home = () => {
@@ -32,16 +33,15 @@ const Home = () => {
 
     return (
         <div className='search-container'>
-            <Heading text='Search the city'/>
+            <Heading text='SearchAWeather App'/>
             <SearchBar setQuery={setQuery} />
             {weather && (
                 <div>
                     <MainTemp weather={weather} />
                     <Video conditions={conditions} setConditions={setConditions}/>
+                    <AdditionalInfo weather={weather}/>   
                 </div>
             )}
-            <Divider />
-            <SubHeading text='More useful data'/>
             <CurrentDate />
         </div>
     )
