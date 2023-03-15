@@ -1,13 +1,10 @@
 import SearchBar from '../components/SearchBar'
 import Video from '../components/Video'
-import TopCities from '../components/TopCities'
 import CurrentDate from '../components/CurrentDate'
-import Divider from '../components/Divider'
 import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import { useEffect, useState } from 'react'
 import Heading from '../components/Heading'
-import SubHeading from '../components/SubHeading'
 import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
 
@@ -33,7 +30,7 @@ const Home = () => {
 
     return (
         <div className='search-container'>
-            <Heading text='SearchAWeather App'/>
+            <Heading text='Search Weather App'/>
             <SearchBar setQuery={setQuery} />
             {weather && (
                 <div>
