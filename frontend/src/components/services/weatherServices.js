@@ -1,12 +1,9 @@
-const apiKey = '9139bc6d00ad8fa87da75f7489652eef';
 const baseUrl = 'https://api.openweathermap.org/data/2.5/';
 const units = 'metric'
 
-//'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}';
-
 const getWeatherData = (infoType, searchParams) => {
     const url = new URL(baseUrl + infoType);
-    url.search = new URLSearchParams({ ...searchParams, appid: apiKey, units });
+    url.search = new URLSearchParams({ ...searchParams, appid: process.env.REACT_APP_WEATHER_API_KEY, units });
 
     return fetch(url)
         .then((res) => res.json())

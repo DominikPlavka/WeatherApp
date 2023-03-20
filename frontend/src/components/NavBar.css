@@ -1,0 +1,27 @@
+ul {
+    display: flex;
+    background-color: rgb(39, 59, 59);
+}
+
+li {
+    list-style-type: none;
+    
+}
+
+li a {
+    display: block;
+    padding: 20px;
+    transition: background-color 300ms ease-in-out;
+    color: white;
+    font-weight: 700;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgba(95, 135, 184, 1);
+}
+
+
