@@ -2,11 +2,13 @@ require('dotenv').config({ path: "../.env" });
 
 const express = require('express');
 const app = express();
-
-const weatherRoutes = require('./routes/weather')
+const weatherRoutes = require('./routes/weather');
+const userRoutes = require('./routes/user');
 const mongoose = require('mongoose');
 
 // middleware
+app.use(express.json());
+
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
@@ -14,6 +16,7 @@ app.use((req, res, next) => {
 
 //routes
 app.use('/api/weather', weatherRoutes);
+app.use('/api/user', userRoutes);
 
 //connecting to DB
 mongoose.connect(process.env.REACT_APP_MONGODB_CONNECTION_STRING)
