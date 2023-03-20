@@ -1,3 +1,4 @@
+import Navbar from '../components/NavBar'
 import SearchBar from '../components/SearchBar'
 import Video from '../components/Video'
 import CurrentDate from '../components/CurrentDate'
@@ -29,17 +30,22 @@ const Home = () => {
     console.log(weather)
 
     return (
-        <div className='search-container'>
-            <Heading text='Search Weather App'/>
-            <SearchBar setQuery={setQuery} />
-            {weather && (
-                <div>
-                    <MainTemp weather={weather} />
-                    <Video conditions={conditions} setConditions={setConditions}/>
-                    <AdditionalInfo weather={weather}/>   
+        <div>
+            <Navbar />
+            <div className='container'>
+                <div className='search-container'>
+                    <Heading text='Search Weather App' />
+                    <SearchBar setQuery={setQuery} />
+                    {weather && (
+                        <div>
+                            <MainTemp weather={weather} />
+                            <Video conditions={conditions} setConditions={setConditions} />
+                            <AdditionalInfo weather={weather} />
+                        </div>
+                    )}
+                    <CurrentDate />
                 </div>
-            )}
-            <CurrentDate />
+            </div>
         </div>
     )
 }
