@@ -1,11 +1,13 @@
-ul {
+.nav-container {
+    list-style-type: none;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     background-color: rgb(39, 59, 59);
 }
 
 li {
-    list-style-type: none;
-    
+    display: inline-block;
 }
 
 li a {
@@ -14,6 +16,11 @@ li a {
     transition: background-color 300ms ease-in-out;
     color: white;
     font-weight: 700;
+}
+
+.logout {
+    align-items: center;
+    padding: 5px 10px;
 }
 
 a:link {
