@@ -30,13 +30,11 @@ const Home = () => {
     console.log(weather)
 
     return (
-        <div>
-            <Navbar />
             <div className='container'>
                 <div className='search-container'>
                     <Heading text='Search Weather App' />
                     <SearchBar setQuery={setQuery} />
-                    {weather && (
+                    { weather && (
                         <div>
                             <MainTemp weather={weather} />
                             <Video conditions={conditions} setConditions={setConditions} />
@@ -46,7 +44,6 @@ const Home = () => {
                     <CurrentDate />
                 </div>
             </div>
-        </div>
     )
 }
 
