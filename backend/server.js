@@ -19,7 +19,7 @@ app.use('/api/weather', weatherRoutes);
 app.use('/api/user', userRoutes);
 
 //connecting to DB
-mongoose.connect(process.env.REACT_APP_MONGODB_CONNECTION_STRING)
+mongoose.connect(process.env.REACT_APP_MONGODB)
     .then(() => {
         app.listen(process.env.REACT_APP_PORT, () => {
             console.log(`Sucesfully connected to DB with server running on PORT ${process.env.REACT_APP_PORT}`)
