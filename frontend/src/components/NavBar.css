@@ -6,6 +6,10 @@
     background-color: rgb(0, 145, 241);
 }
 
+ul {
+    display: flex;
+}
+
 li {
     display: inline-block;
     justify-content: center;
@@ -16,6 +20,12 @@ li a {
     padding: 20px;
     transition: background-color 300ms ease-in-out;
     color: white;
+}
+
+.linkedin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-logout-container {
