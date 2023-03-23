@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
   margin: 0;
   padding: 0; 
@@ -7,6 +8,20 @@
 
 #root {
   width: 100%;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  margin: 0 auto 50px auto;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  margin: 0 auto 50px auto;
 }
 
 p {

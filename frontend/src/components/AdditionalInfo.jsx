@@ -4,7 +4,6 @@ import { IconContext } from "react-icons";
 
 const AdditionalInfo = ({ weather: { sunrise, sunset, humidity } }) => {
 
-   
     const timeSunrise = new Date(sunrise*1000);
     const sunriseTime = timeSunrise.toLocaleTimeString();
 

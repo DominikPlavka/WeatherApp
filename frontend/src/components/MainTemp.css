@@ -26,7 +26,7 @@ p {
     font-size: 80px;
     grid-column-start: 2;
     margin-right: 20px;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .right-temp {
