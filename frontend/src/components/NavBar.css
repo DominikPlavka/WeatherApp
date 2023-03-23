@@ -3,11 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(39, 59, 59);
+    background-color: rgb(0, 145, 241);
 }
 
 li {
-    display: flex;
     display: inline-block;
     justify-content: center;
 }
@@ -17,20 +16,33 @@ li a {
     padding: 20px;
     transition: background-color 300ms ease-in-out;
     color: white;
-    font-weight: 700;
 }
 
-.logout {
+.user-logout-container {
+    display: flex;
     align-items: center;
-    padding: 5px 10px;
+    gap: 20px; 
 }
+
+.user-logout-container button {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px white solid;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    transition: background-color 300ms ease-out;
+    font-size: 14px;
+}
+
+.user-logout-container button:hover {
+    background-color: rgb(255, 140, 0);
+}
+
 
 a:link {
     text-decoration: none;
 }
 
 a:hover {
-    background-color: rgba(95, 135, 184, 1);
+    background-color: rgb(255, 140, 0)
 }
-
-

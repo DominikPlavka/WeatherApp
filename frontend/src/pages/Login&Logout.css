@@ -15,18 +15,22 @@ form label {
   color: white;
 }
 
+form>p>a {
+  color: white;
+}
+
 form h3 {
   margin-bottom: 20px;
 }
 
-form input {
+.form-input {
   padding: 10px;
   border: none;
   margin-bottom: 10px;
   border-radius: 10px;
 }
 
-form input:focus {
+.form-input {
   outline: none;
 }
 

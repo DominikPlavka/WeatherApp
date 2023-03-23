@@ -20,13 +20,13 @@ const SignUp = () => {
             <h2>Sign Up</h2>
 
             <label>Email:</label>
-            <input
+            <input className="form-input"
                 type="text"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
             />
             <label>Password:</label>
-            <input
+            <input className="form-input"
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}

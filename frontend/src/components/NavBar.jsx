@@ -22,13 +22,13 @@ const Navbar = () => {
                 </ul>
             </div>
             {user && (
-                <div>
-                    <span>{user.email}</span>
-                    <button className="logout" onClick={handleClick}>Logout</button>
+                <div className="user-logout-container">
+                    <p>{user.email}</p>
+                    <button className="logout" onClick={handleClick}>LOGOUT</button>
                 </div>
             )}
             {!user && (
-                <span>FOCK YOU</span>
+                <p>PLEASE LOGIN</p>
             )}
             
         </div>
