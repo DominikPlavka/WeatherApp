@@ -1,8 +1,6 @@
 import './SearchBar.css';
 import { useState } from 'react';
 
-const apiKey = '9139bc6d00ad8fa87da75f7489652eef';
-
 const SearchBar = ({ setQuery }) => {
 
     const [city, setCity] = useState("");
@@ -18,16 +16,17 @@ const SearchBar = ({ setQuery }) => {
     return (
         <div>
             <form className='searchbar' onSubmit={handleSubmit}>
-                <input type="text"
+                <div><input type="text"
                     className="bar"
                     value={city}
                     onChange={(e) => setCity(e.currentTarget.value)}
                     placeholder="Search location"
                     name="search" />
-                <button
-                    type="submit"
-                    className="submit"
+                    <button
+                        type="submit"
+                        className="submit"
                     >Search</button>
+                </div>
             </form>
         </div>
 

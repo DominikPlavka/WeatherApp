@@ -6,7 +6,6 @@ const createToken = (_id) => {
     return jwt.sign({ _id }, process.env.REACT_APP_SECRET, { expiresIn: '1h' }); // payload, secret, expires 
 }
 
-// login user
 const loginUser = async (req, res) => {
 
     const { email, password } = req.body;
@@ -22,7 +21,6 @@ const loginUser = async (req, res) => {
     }
 }
 
-// signup user
 const signupUser = async (req, res) => {
 
     const { email, password } = req.body;

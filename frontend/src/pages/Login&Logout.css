@@ -1,3 +1,7 @@
+.main-container {
+  margin-top: 100px;
+}
+
 form.login, form.signup {
     display: flex;
     flex-direction: column;
@@ -7,7 +11,8 @@ form.login, form.signup {
     border-radius: 16px;
     box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
     background-color: rgba(0, 145, 241, 0.8);
-  }
+}
+
 
 form label {
   font-weight: 700;
@@ -15,7 +20,7 @@ form label {
   color: white;
 }
 
-form>p>a {
+form p a {
   color: white;
 }
 

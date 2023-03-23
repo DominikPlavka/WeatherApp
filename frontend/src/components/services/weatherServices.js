@@ -1,12 +1,12 @@
 const baseUrl = 'https://api.openweathermap.org/data/2.5/';
 const units = 'metric';
 
-const getWeatherData = (infoType, searchParams) => {
+const getWeatherData = async (infoType, searchParams) => {
     const url = new URL(baseUrl + infoType);
     url.search = new URLSearchParams({ ...searchParams, appid: process.env.REACT_APP_WEATHER_API_KEY, units });
 
-    return fetch(url)
-        .then((res) => res.json())
+    const res = await fetch(url);
+    return res.json();
 };
 
 const formatCurrentWeather = (data) => {
@@ -25,30 +25,15 @@ const formatCurrentWeather = (data) => {
     return { lat, lon, temp, feels_like, temp_min, temp_max, humidity, name, dt, country, sunrise, sunset, weather, speed, details, description, icon };
 };
 
-/*const formatForecastWeather = (data) => {
-    let {timezone, daily, hourly} = data;
-    daily = daily.slice(1,6).map();
-}*/
-
 const getFormattedWeatherData = async (searchParams) => {
     const formattedCurrentWeather = await getWeatherData(
             'weather', searchParams)
         .then(formatCurrentWeather);
-
-        //const {lat, lon} = formatCurrentWeather;
 
     return formattedCurrentWeather;
 };
 
 const iconUrl = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`
 
-/*const formattedForecastWeather = await getFormattedWeatherData('onecall', {
-    lat,
-    lon,
-    exclude: 'current, minutely, alerts',
-    units: searchParams.units
-}).then(formatForecastWeather);*/
-
 export default getFormattedWeatherData;
-
 export { iconUrl };

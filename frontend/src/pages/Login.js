@@ -17,25 +17,28 @@ const Login = () => {
     };
 
     return (
-        <form className="login" onSubmit={handleSubmit}>
-            <Heading heading="2" text="Login" />
-            <label>Email:</label>
-            <input className="form-input"
-                type="text"
-                onChange={(e) => setEmail(e.target.value)}
-                value = {email}
-            />
-            <label>Password:</label>
-            <input className="form-input"
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-                value={password}
-            />
-            {error && <div className="error"><AiOutlineWarning/>&nbsp;{error}</div>}
-            <p>Don't have an accout? Create <a href="/signup"><u>one for free</u></a>!</p>
-            <button className="submit-form" disabled={isLoading} type="submit">Login</button>
-            <Video conditions='Rain' />
-        </form>
+        <div className="main-container">
+            <Heading heading="1" text="Welcome to SearchWeather App" />
+            <form className="login" onSubmit={handleSubmit}>
+                <Heading heading="2" text="Login" />
+                <label>Email:</label>
+                <input className="form-input"
+                    type="text"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                />
+                <label>Password:</label>
+                <input className="form-input"
+                    type="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                />
+                {error && <div className="error"><AiOutlineWarning />&nbsp;{error}</div>}
+                <p>Don't have an accout? Create <a href="/signup"><u>one for free</u></a>!</p>
+                <button className="submit-form" disabled={isLoading} type="submit">Login</button>
+                <Video conditions='Rain' />
+            </form>
+        </div>
 
     )
 }
