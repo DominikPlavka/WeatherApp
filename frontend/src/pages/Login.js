@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
-import "./Login.css"
+import Heading from "../components/Heading";
+import Video from "../components/Video";
+import { AiOutlineWarning } from "react-icons/ai";
+import "./Login&Logout.css"
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -15,8 +18,7 @@ const Login = () => {
 
     return (
         <form className="login" onSubmit={handleSubmit}>
-            <h3>Login</h3>
-
+            <Heading heading="2" text="Login" />
             <label>Email:</label>
             <input
                 type="text"
@@ -29,9 +31,9 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
             />
-
-            <button disabled={isLoading} type="submit">Login</button>
-            {error && <div className="error">{error}</div>}
+            {error && <div className="error"><AiOutlineWarning/>&nbsp;{error}</div>}
+            <button className="submit-form" disabled={isLoading} type="submit">Login</button>
+            <Video conditions='Rain' />
         </form>
 
     )

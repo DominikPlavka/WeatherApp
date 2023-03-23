@@ -1,5 +1,5 @@
 const baseUrl = 'https://api.openweathermap.org/data/2.5/';
-const units = 'metric'
+const units = 'metric';
 
 const getWeatherData = (infoType, searchParams) => {
     const url = new URL(baseUrl + infoType);
@@ -35,7 +35,7 @@ const getFormattedWeatherData = async (searchParams) => {
             'weather', searchParams)
         .then(formatCurrentWeather);
 
-        const {lat, lon} = formatCurrentWeather;
+        //const {lat, lon} = formatCurrentWeather;
 
     return formattedCurrentWeather;
 };

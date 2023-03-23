@@ -2,7 +2,7 @@ import Home from "./pages/Home"
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Navbar from "./components/NavBar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 
@@ -16,15 +16,15 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={user ? <Home /> : <Login />}
+            element={user ? <Home /> : <Navigate to="/login" />}
           />
           <Route
             path="/signup"
-            element={user ? <SignUp /> : <Home />}
+            element={!user ? <SignUp /> : <Navigate to="/" />}
           />
           <Route
             path="/login"
-            element={!user ? <Login /> : <Home />}
+            element={!user ? <Login /> : <Navigate to="/" />}
           />
         </Routes>
       </BrowserRouter>

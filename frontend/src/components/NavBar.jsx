@@ -1,6 +1,7 @@
-import "./NavBar.css";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { AiFillLinkedin } from "react-icons/ai";
+import "./NavBar.css";
 
 const Navbar = () => {
 
@@ -15,8 +16,9 @@ const Navbar = () => {
         <div className="nav-container">
             <div>
                 <ul>
-                    <li><a href='https://github.com/'>Home</a></li>
-                    <li><a href='https://github.com/'>Home2</a></li>
+                    <li><a href='https://www.linkedin.com/in/dominik-plavka-0411549a/'><AiFillLinkedin />MyLinkedInProfile</a></li>
+                    <li><a href='/login'>Login</a></li>
+                    <li><a href='/signup'>SignUp</a></li>
                 </ul>
             </div>
             {user && (
