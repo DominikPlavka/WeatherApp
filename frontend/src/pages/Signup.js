@@ -18,7 +18,7 @@ const SignUp = () => {
 
     return (
         <div className="main-container">
-            <Heading heading="1" text="Welcome to SearchWeather App" />
+            <Heading heading="1" text="Welcome to Search Weather App" />
             <form className="signup" onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
 
