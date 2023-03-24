@@ -1,5 +1,5 @@
 {
-    "proxy": "https://weatherapp-frontend.onrender.com",
+    "proxy": "https://weatherapp-backend-bxq8.onrender.com/",
     "name": "frontend",
     "version": "0.1.0",
     "private": true,
