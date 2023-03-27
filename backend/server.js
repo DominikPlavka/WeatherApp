@@ -15,7 +15,17 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use(cors());
+app.use(cors({
+    origin: process.env.REACT_APP_FRONTEND_LINK,
+    methods: ["GET", "POST", "PUT", "DELTE"],
+    allowedHeaders: ["Content-type", "Authorization"],
+    credentials: true,
+    preflightContinue: true
+}));
+
+app.options("*", cors());
+
+//app.use(cors());
 
 //routes
 app.use('/api/weather', weatherRoutes);
