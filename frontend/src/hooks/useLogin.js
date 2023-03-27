@@ -12,6 +12,7 @@ export const useLogin = () => {
         setError(null);
 
         const response = await fetch(process.env.REACT_APP_BACKEND + '/api/user/login', {
+            mode: 'no-cors',
             method: 'POST',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({email, password})
