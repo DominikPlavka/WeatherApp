@@ -14,8 +14,7 @@ export const useLogin = () => {
         const response = await fetch(process.env.REACT_APP_BACKEND + '/api/user/login', {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json',
-                'Access-Control-Allow-Origin' : '*'
+                'Content-type': 'application/json'
             },
             body: JSON.stringify({email, password})
         });
