@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 
 app.use(cors({
     origin: process.env.REACT_APP_FRONTEND_LINK,
-    methods: ["GET", "POST", "PUT", "DELTE"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-type", "Authorization"],
     credentials: true,
     preflightContinue: true
