@@ -21,11 +21,12 @@ app.use(cors({
     allowedHeaders: ["Content-type", "Authorization"],
     credentials: true,
     preflightContinue: true
-}));
+})
+);
 
 app.options("*", cors());
 
-//app.use(cors());
+app.use(express.json());
 
 //routes
 app.use('/api/weather', weatherRoutes);
