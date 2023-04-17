@@ -6,7 +6,7 @@ const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, s
     
     return (
         <div className="temp-data">
-            <p className="city"><img className="icon" src={iconUrl(icon)}></img>{name}, {country}</p>
+            <p className="city"><img className="icon" alt="Icon of weather conditions" src={iconUrl(icon)}></img>{name}, {country}</p>
             <p className="temp">{temp} °C</p>
             <div className="right-temp">
                 <p className="temp-add detail">{details}</p>

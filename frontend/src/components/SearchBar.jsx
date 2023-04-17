@@ -11,7 +11,7 @@ const SearchBar = ({ setQuery }) => {
             setQuery({ q: city });
         }
         setCity("");
-    }
+    };
 
     return (
         <div>

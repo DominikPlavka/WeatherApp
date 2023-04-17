@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div className="nav-container">
                     <div>
                         <ul>
-                            <li><a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/"><AiFillLinkedin />&nbsp;MyLinkedInProfile</a></li>
+                            <li><a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/"><AiFillLinkedin />&nbsp;MyProfile</a></li>
                             <li><a href="/login">Login</a></li>
                             <li><a href="/signup">SignUp</a></li>
                         </ul>

@@ -25,12 +25,14 @@ const SignUp = () => {
                 <label>Email:</label>
                 <input className="form-input"
                     type="text"
+                    placeholder="Never use real credentials!"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                 />
                 <label>Password:</label>
                 <input className="form-input"
                     type="password"
+                    placeholder="Never use real credentials!"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                 />
