@@ -6,7 +6,7 @@ This app is used to show actual temperature in selected area based on OpenWeathe
 - basic structure: API (backend) folder, Frontend folder
  
 # Deploying
-- both folders of this project are deployed on Vercel (https://vercel.com/)
+- both folders of this project are deployed on Vercel https://weather-app-psi-dun-45.vercel.app/
 
 # Notice 
 - All background videos used in this mini app are from CC0 sources (Pixabay, Pexels).
