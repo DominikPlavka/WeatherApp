@@ -11,4 +11,4 @@ This app is used to show actual temperature in selected area based on OpenWeathe
 # Notice 
 - all background videos used in this mini app are from CC0 sources ([Pixabay](https://pixabay.com/), [Pexels](https://www.pexels.com/))
 - this App is presented as student project - use dummy data to sign up (you can find them on login page)
-- **Never use your real credentials!**
+- **never use your real credentials!**
