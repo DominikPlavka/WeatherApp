@@ -32,7 +32,9 @@ const Navbar = () => {
                 <div className="nav-container">
                     <div>
                         <ul>
-                        <li><a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/"><AiFillLinkedin />&nbsp;MyLinkedInProfile</a></li>
+                            <li>
+                                <a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/"><AiFillLinkedin />&nbsp;MyProfile</a>
+                            </li>
                         </ul>
                     </div>
                     <div className="user-logout-container">
@@ -42,10 +44,6 @@ const Navbar = () => {
                 </div>
             )}
         </div>
-
-
-
-
     )
 }
 
