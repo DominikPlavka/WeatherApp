@@ -29,7 +29,6 @@ const SearchBar = ({ setQuery }) => {
                 </div>
             </form>
         </div>
-
     )
 }
 

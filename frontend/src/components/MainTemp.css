@@ -11,7 +11,7 @@ p {
 
 .city {
     display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
     grid-column-start: 2;
     grid-column-end: 4;

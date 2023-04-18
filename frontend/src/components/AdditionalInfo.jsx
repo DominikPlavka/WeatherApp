@@ -13,11 +13,10 @@ const AdditionalInfo = ({ weather: { sunrise, sunset, humidity } }) => {
     return (
         <IconContext.Provider value={{ color: "white", size: "2em",}}>
             <div className="add-info-container">
-                    <p className="add-data"><WiHorizonAlt />&nbsp;{sunriseTime}&nbsp;|&nbsp;<WiHorizon />&nbsp;{sunsetTime}&nbsp;|&nbsp;<WiHumidity />&nbsp;{humidity}</p>
+                <p className="add-data"><WiHorizonAlt />&nbsp;{sunriseTime}&nbsp;|&nbsp;<WiHorizon />&nbsp;{sunsetTime}&nbsp;|&nbsp;<WiHumidity />&nbsp;{humidity}</p>
             </div>
         </IconContext.Provider>
     )
-
 }
 
 export default AdditionalInfo;
