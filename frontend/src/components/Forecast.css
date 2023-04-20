@@ -1,0 +1,19 @@
+.forecast {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hourly, .daily {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

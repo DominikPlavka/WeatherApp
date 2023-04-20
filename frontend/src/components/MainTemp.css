@@ -12,6 +12,7 @@ p {
 .city {
     display: flex;
     text-align: center;
+    justify-content: center;
     align-items: center;
     grid-column-start: 2;
     grid-column-end: 4;
@@ -48,7 +49,6 @@ p {
 }
 
 .icon {
-    display: inline-block;
     width: 15%;
     height: auto;
 }

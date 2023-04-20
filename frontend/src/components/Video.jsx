@@ -11,17 +11,17 @@ const Video = ({ conditions }) => {
     const currentCondition = listOfConditions.filter((e) => e.includes(conditions));
 
     // USING DEFAULT VID WHEN NO BASIC CONDITION IS FULLFILED
-    if (currentCondition.length === 0) {
-        return (
-            <div>
-                <video src={Clear} className="video" type='video/mp4' autoPlay loop muted />
-            </div>
-        )
-    // USING VID CORRESPONDING TO BASIC SET OF CONDITIONS
-    } else {
+    if (currentCondition.length > 0) {
         return (
             <div>
                 <video src={currentCondition[0]} className="video" type='video/mp4' autoPlay loop muted />
+            </div>
+        )
+        // USING VID CORRESPONDING TO BASIC SET OF CONDITIONS
+    } else {
+        return (
+            <div>
+                <video src={Clear} className="video" type='video/mp4' autoPlay loop muted />
             </div>
         )
     }
