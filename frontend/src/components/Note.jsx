@@ -1,4 +1,3 @@
-import { AiFillGithub } from "react-icons/ai";
 import "./Note.css";
 
 const Note = () => {
