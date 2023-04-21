@@ -5,11 +5,33 @@
     gap: 40px;
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.header > hr {
+    color: white;
+    width: 70%
+}
+
+.icon {
+    width: 3.5em;
+    height: auto;
+}
+
 .hourly, .daily {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+}
+
+.window > p {
+    font-size: 1em;
+    text-align: center;
 }
 
 .window {

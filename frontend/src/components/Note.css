@@ -1,0 +1,10 @@
+.note {
+    margin-top: 40px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.note > a {
+    text-decoration: underline;
+    color: white;
+}

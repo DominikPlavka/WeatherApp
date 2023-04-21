@@ -1,6 +1,6 @@
 import SearchBar from '../components/SearchBar'
 import Video from '../components/Video'
-import CurrentDate from '../components/CurrentDate'
+import Note from '../components/Note'
 import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import Forecast from '../components/Forecast'
@@ -27,6 +27,8 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
+    console.log(weather)
+
     return (
             <div className='container'>
                 <div className='search-container'>
@@ -40,7 +42,7 @@ const Home = () => {
                             <Forecast weather={weather}/>
                         </div>
                     )}
-                    <CurrentDate />
+                    <Note />
                 </div>
             </div>
     )

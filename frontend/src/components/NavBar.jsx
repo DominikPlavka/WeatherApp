@@ -39,7 +39,7 @@ const Navbar = () => {
                     </div>
                     <div className="user-logout-container">
                         <p>{user.email}</p>
-                        <button className="logout" onClick={handleClick}>LOGOUT</button>
+                        <button className="logout" onClick={handleClick}>Logout</button>
                     </div>
                 </div>
             )}
