@@ -27,8 +27,6 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
-    console.log(weather)
-
     return (
             <div className='container'>
                 <div className='search-container'>
