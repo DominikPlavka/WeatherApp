@@ -11,13 +11,22 @@ p {
 
 .city {
     display: flex;
-    text-align: center;
+    justify-content: center;
+}
+
+.city-data {
+    display: flex;
+    justify-content: center;
     align-items: center;
     grid-column-start: 2;
     grid-column-end: 4;
-    font-size: 32px;
+    font-size: 1.5em;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.city-data > p {
+    font-size: 1em;
 }
 
 .temp {
@@ -27,6 +36,7 @@ p {
     grid-column-start: 2;
     margin-right: 20px;
     justify-content: flex-end;
+    text-align: end;
 }
 
 .right-temp {
@@ -47,8 +57,7 @@ p {
     font-weight: 900;
 }
 
-.icon {
-    display: inline-block;
-    width: 15%;
+.city-data > .icon {
+    width: 3em;
     height: auto;
 }

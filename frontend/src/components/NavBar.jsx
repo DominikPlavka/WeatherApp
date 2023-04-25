@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div className="nav-container">
                     <div>
                         <ul>
-                            <li><a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/"><AiFillLinkedin />&nbsp;MyProfile</a></li>
+                            <li><a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/" target="_blank" rel="noopener noreferrer"><AiFillLinkedin />&nbsp;MyProfile</a></li>
                             <li><a href="/login">Login</a></li>
                             <li><a href="/signup">SignUp</a></li>
                         </ul>
@@ -39,7 +39,7 @@ const Navbar = () => {
                     </div>
                     <div className="user-logout-container">
                         <p>{user.email}</p>
-                        <button className="logout" onClick={handleClick}>LOGOUT</button>
+                        <button className="logout" onClick={handleClick}>Logout</button>
                     </div>
                 </div>
             )}
