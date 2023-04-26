@@ -7,6 +7,10 @@ const citySchema = new Schema({
         required: true,
         unique: true
     },
+    city_country: {
+        type: String,
+        required: true
+    },
     user_id: {
         type: String,
         required: true
