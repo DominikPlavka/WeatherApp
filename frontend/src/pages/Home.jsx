@@ -5,7 +5,7 @@ import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import Forecast from '../components/Forecast'
 import { useEffect, useState } from 'react'
-import Heading from '../components/Heading'
+import TopCities from '../components/TopCities'
 import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
 
@@ -30,7 +30,7 @@ const Home = () => {
     return (
             <div className='container'>
                 <div className='search-container'>
-                    <Heading heading="1" text='Search Weather App' />
+                    <TopCities />
                     <SearchBar setQuery={setQuery} />
                     { weather && (
                         <div>

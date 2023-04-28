@@ -1,28 +1,34 @@
+import { FiTrash2 } from "react-icons/fi"
 import "./TopCities.css"
 
 const TopCities = () => {
-    
+
+    const iconStyle = { "font-size": "1.2em" }
+
     const cities = [
         {
             id: 1,
-            title: 'SNA'
+            title: 'Tokio'
         },
         {
             id: 2,
-            title: 'SNB'
+            title: 'Spišská Nová Ves'
         },
         {
-            id: 3,
-            title: 'SNV'
+            id: 2,
+            title: 'Berlin'
         }
     ]
 
     return (
-        <div className="cities-container">
-            {cities.map((city) => (
-                <p className="cities" key={city.id}>{city.title}</p>
-            ))}
-        </div>
+            <div className="cities-container">
+                {cities.map((city, index) => (
+                    <div key={index} className="cities">
+                        <p>{city.title}</p>
+                        <button className="delete"><FiTrash2 style={iconStyle} /></button>
+                    </div>
+                ))}
+            </div>
     )
 }
 

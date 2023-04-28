@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const { addCity, deleteCity } = require ('../controllers/cityController');
+const { addCity, deleteCity, getCities, getCity } = require ('../controllers/cityController');
 
-//adding city
+router.get('/', getCities);
+
+router.get('/:id', getCity);
+
 router.post('/', addCity);
 
-//deleting city
 router.delete('/:id', deleteCity);
 
 module.exports = router;

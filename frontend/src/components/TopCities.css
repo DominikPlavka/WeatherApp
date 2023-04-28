@@ -1,11 +1,21 @@
 .cities-container {
-    margin: 50px 0 40px 0;
+    margin-bottom: 50px;
     display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .cities {
-    flex-direction: row;
-    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.delete {
+    background: none;
+	color: white;
+	border: none;
+	cursor: pointer;
 }
 
 
