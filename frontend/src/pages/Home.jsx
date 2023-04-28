@@ -27,13 +27,24 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
-    /////////////////// TEMP DATA FOR CITIES
+    const [cities, setCities] = useState(null);
 
-    const cities = [
-        { city: "SNV" },
-        { city: "YOUR MOMMA" },
-        { city: "FOCK" }
-    ]
+    /////////////////// TEMP DATA FOR CITIES - FETCH ALL DATA
+
+    useEffect (() => {
+        const getCities = async () => {
+            const response = await fetch ('/api/city');
+            
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error ('There was a problem to fetch data');
+            }
+            
+            setCities(data);
+        }
+        getCities()
+    }, [])
 
     //////////////////
 
