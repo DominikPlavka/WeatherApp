@@ -5,20 +5,20 @@ import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import Forecast from '../components/Forecast'
 import { useEffect, useState } from 'react'
-import TopCities from '../components/TopCities'
+import TopCity from '../components/TopCity'
 import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
 
 const Home = () => {
 
-    const [query, setQuery] = useState({q: "Spisska Nova Ves"});
+    const [query, setQuery] = useState({ q: "Spisska Nova Ves" });
     const [units, setUnits] = useState('metric');
     const [weather, setWeather] = useState(null);
     const [conditions, setConditions] = useState(null);
 
     useEffect(() => {
         const fetchWeather = async () => {
-            await getFormattedWeatherData({...query, units})
+            await getFormattedWeatherData({ ...query, units })
                 .then((data) => {
                     setWeather(data);
                     setConditions(data.details);
@@ -27,22 +27,37 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
+    /////////////////// TEMP DATA FOR CITIES
+
+    const cities = [
+        { city: "SNV" },
+        { city: "YOUR MOMMA" },
+        { city: "FOCK" }
+    ]
+
+    //////////////////
+
     return (
-            <div className='container'>
-                <div className='search-container'>
-                    <TopCities />
-                    <SearchBar setQuery={setQuery} />
-                    { weather && (
-                        <div>
-                            <MainTemp weather={weather} />
-                            <Video conditions={conditions} />
-                            <AdditionalInfo weather={weather} />
-                            <Forecast weather={weather}/>
-                        </div>
-                    )}
-                    <Note />
+        <div className='container'>
+            <div className='search-container'>
+                <div className='top-cities'>
+                {cities &&
+                    cities.map((cityName, index) => (
+                        <TopCity key={index} city={cityName.city} />
+                    ))}
                 </div>
+                <SearchBar setQuery={setQuery} />
+                {weather && (
+                    <div>
+                        <MainTemp weather={weather} />
+                        <Video conditions={conditions} />
+                        <AdditionalInfo weather={weather} />
+                        <Forecast weather={weather} />
+                    </div>
+                )}
+                <Note />
             </div>
+        </div>
     )
 }
 
