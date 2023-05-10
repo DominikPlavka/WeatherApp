@@ -6,7 +6,7 @@ const getCities = async (req, res) => {
     //const user_id = req.user._id;
 
     try {
-        const allCities = await City.find();
+        const allCities = await City.find({});
         res.status(200).json(allCities);
     } catch (error) {
         res.status(400).json({error: error.message});
@@ -32,8 +32,7 @@ const getCity = async (req, res) => {
 
 const addCity = async (req, res) => {
 
-    //const user_id = req.user._id;
-    const { city, city_country, user_id } = req.body;
+    const { city, city_country, user_id} = req.body;
 
     try {
         const favoriteCity = await City.create({ city, city_country, user_id});

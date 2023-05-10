@@ -3,7 +3,29 @@ import { iconUrl } from "./services/weatherServices"
 import { AiOutlineHeart } from "react-icons/ai"
 import React from "react"
 
+
+
 const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, speed } }) => {
+
+    const handleClick = () => {
+
+        const data = {
+            city: name,
+            city_country: country,
+            user_id: 777
+        }
+
+        const addFavoriteCity = async () => {
+            await fetch('/api/city', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+        }
+        addFavoriteCity();
+    }
 
     return (
         <div>
@@ -12,7 +34,7 @@ const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, s
                     <img className="icon" alt="icon of weather conditions" src={iconUrl(icon)} />
                     <div className="result">
                         <p>{name}, {country}</p>
-                        <button className="favorite" ><AiOutlineHeart /></button>
+                        <button onClick={ handleClick } className="favorite" ><AiOutlineHeart /></button>
                     </div>
                 </div>
             </div>

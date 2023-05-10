@@ -27,24 +27,23 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
-    const [cities, setCities] = useState(null);
+    const [cities, setCities] = useState("");
 
     /////////////////// TEMP DATA FOR CITIES - FETCH ALL DATA
 
-    useEffect (() => {
+    useEffect(() => {
         const getCities = async () => {
-            const response = await fetch ('/api/city');
-            
+            const response = await fetch('/api/city');
+
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error ('There was a problem to fetch data');
+                throw new Error('There was a problem to fetch data');
             }
-            
-            setCities(data);
+            setCities(data)
         }
         getCities()
-    }, [])
+    }, [cities])
 
     //////////////////
 
@@ -52,10 +51,10 @@ const Home = () => {
         <div className='container'>
             <div className='search-container'>
                 <div className='top-cities'>
-                {cities &&
-                    cities.map((cityName, index) => (
-                        <TopCity key={index} city={cityName.city} />
-                    ))}
+                    {cities &&
+                        cities.map((cityName, index) => (
+                            <TopCity key={index} city={cityName.city} />
+                        ))}
                 </div>
                 <SearchBar setQuery={setQuery} />
                 {weather && (
