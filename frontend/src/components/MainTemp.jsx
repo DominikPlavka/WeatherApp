@@ -6,13 +6,16 @@ import React from "react"
 import { useCitiesContext } from "../hooks/useCitiesContext"
 
 
-
 const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, speed } }) => {
     
     const { user } = useAuthContext();
     const { dispatch } = useCitiesContext();
 
     const handleClick = () => {
+
+        if (!user) {
+            throw new Error("You must be logged in")
+        }
 
         const data = {
             city: name,
@@ -31,10 +34,13 @@ const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, s
             const json = await response.json();
 
             if (!response.ok) {
-                throw new Error (json.error);
+                throw new Error(json.error);
             }
 
-            dispatch({ type: "ADD_CITY", payload: json})
+            if (user) {
+                dispatch({ type: "ADD_CITY", payload: json });
+            }
+
         }
         addFavoriteCity();
     }
@@ -46,7 +52,7 @@ const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, s
                     <img className="icon" alt="icon of weather conditions" src={iconUrl(icon)} />
                     <div className="result">
                         <p>{name}, {country}</p>
-                        <button onClick={ handleClick } className="favorite" ><AiOutlineHeart /></button>
+                        <button onClick={handleClick} className="favorite" ><AiOutlineHeart /></button>
                     </div>
                 </div>
             </div>

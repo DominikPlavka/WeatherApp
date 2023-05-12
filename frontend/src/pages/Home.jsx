@@ -38,7 +38,7 @@ const Home = () => {
         const getCities = async () => {
             const response = await fetch('/api/city',
                 {
-                    headers: { Authorization: `Bearer ${user.token}` },
+                    headers: { "Authorization": `Bearer ${user.token}` },
                 }
             );
 
@@ -48,10 +48,12 @@ const Home = () => {
 
             const data = await response.json();
 
-            dispatch({ type: "GET_CITIES", payload: data })
+            if (user) {
+                dispatch({ type: "GET_CITIES", payload: data })
+            }
         }
         getCities()
-    }, [dispatch])
+    }, [user, dispatch])
 
     //////////////////
 
