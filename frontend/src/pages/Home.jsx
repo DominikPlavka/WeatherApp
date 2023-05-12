@@ -6,6 +6,7 @@ import MainTemp from '../components/MainTemp'
 import Forecast from '../components/Forecast'
 import { useEffect, useState } from 'react'
 import { useCitiesContext } from '../hooks/useCitiesContext'
+import { useAuthContext } from '../hooks/useAuthContext'
 import TopCity from '../components/TopCity'
 import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
@@ -30,22 +31,27 @@ const Home = () => {
 
     /////////////////// TEMP DATA FOR CITIES - FETCH ALL DATA
 
-    const {cities, dispatch} = useCitiesContext();
+    const { cities, dispatch } = useCitiesContext();
+    const { user } = useAuthContext();
 
     useEffect(() => {
         const getCities = async () => {
-            const response = await fetch('/api/city');
-            
+            const response = await fetch('/api/city',
+                {
+                    headers: { Authorization: `Bearer ${user.token}` },
+                }
+            );
+
             if (!response.ok) {
                 throw new Error('There was a problem to fetch data');
             }
 
             const data = await response.json();
 
-            dispatch({type: "GET_CITIES", payload: data})
+            dispatch({ type: "GET_CITIES", payload: data })
         }
         getCities()
-    }, [cities])
+    }, [dispatch])
 
     //////////////////
 
