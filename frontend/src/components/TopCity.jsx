@@ -8,7 +8,7 @@ const TopCity = ({ city }) => {
     return (
         <div className="cities-container">
             <div className="cities">
-                <p>{city}</p>
+                <p>{city.city}</p>
                 <button className="delete"><FiTrash2 style={iconStyle} /></button>
             </div>
         </div>

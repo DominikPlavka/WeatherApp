@@ -38,7 +38,7 @@ const Home = () => {
         const getCities = async () => {
             const response = await fetch('/api/city',
                 {
-                    headers: { "Authorization": `Bearer ${user.token}` },
+                    headers: { Authorization: `Bearer ${user.token}` },
                 }
             );
 
@@ -62,8 +62,8 @@ const Home = () => {
             <div className='search-container'>
                 <div className='top-cities'>
                     {cities &&
-                        cities.map((cityName, index) => (
-                            <TopCity key={index} city={cityName.city} />
+                        cities.map((city, index) => (
+                            <TopCity key={index} city={city} />
                         ))}
                 </div>
                 <SearchBar setQuery={setQuery} />
