@@ -5,6 +5,7 @@ import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import Forecast from '../components/Forecast'
 import { useEffect, useState } from 'react'
+import { useCitiesContext } from '../hooks/useCitiesContext'
 import TopCity from '../components/TopCity'
 import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
@@ -27,20 +28,21 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
-    const [cities, setCities] = useState("");
-
     /////////////////// TEMP DATA FOR CITIES - FETCH ALL DATA
+
+    const {cities, dispatch} = useCitiesContext();
 
     useEffect(() => {
         const getCities = async () => {
             const response = await fetch('/api/city');
-
-            const data = await response.json();
-
+            
             if (!response.ok) {
                 throw new Error('There was a problem to fetch data');
             }
-            setCities(data)
+
+            const data = await response.json();
+
+            dispatch({type: "GET_CITIES", payload: data})
         }
         getCities()
     }, [cities])

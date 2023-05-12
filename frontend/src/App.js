@@ -4,6 +4,7 @@ import SignUp from "./pages/Signup";
 import Navbar from "./components/NavBar";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
+import { CityContextProvider } from "./context/CitiesContext"
 
 
 function App() {
