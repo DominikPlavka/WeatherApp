@@ -1,8 +1,9 @@
 const express = require('express');
+const requireAuth = require('../middleware/requireAuth');
+
 const router = express.Router();
 
 const { addCity, deleteCity, getCities, getCity } = require ('../controllers/cityController');
-const requireAuth = require('../middleware/requireAuth');
 
 router.use(requireAuth);
 

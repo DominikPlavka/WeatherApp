@@ -33,7 +33,7 @@ const Navbar = () => {
                     <div>
                         <ul>
                             <li>
-                                <a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/"><AiFillLinkedin />&nbsp;MyProfile</a>
+                                <a className="linkedin" href="https://www.linkedin.com/in/dominik-plavka-0411549a/" target="_blank" rel="noopener noreferrer"><AiFillLinkedin />&nbsp;MyProfile</a>
                             </li>
                         </ul>
                     </div>
