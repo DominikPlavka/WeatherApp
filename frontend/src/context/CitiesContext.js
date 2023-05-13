@@ -7,13 +7,17 @@ export const citiesReducer = (state, action) => {
         case 'GET_CITIES':
             return {
                 cities: action.payload
-            }
+            };
         case 'ADD_CITY':
             return {
                 cities: [action.payload, ...state.cities]
-            }
+            };
+        case 'DELETE_CITY':
+            return {
+                cities: state.cities.filter((c) => c._id !== action.payload._id)
+            };
         default:
-            return state
+            return state;
     }
 };
 
