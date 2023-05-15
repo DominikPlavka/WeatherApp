@@ -5,12 +5,15 @@ const getCities = async (req, res) => {
 
     const user_id = req.user._id;
 
+
     try {
         const allCities = await City.find({user_id});
+        
         res.status(200).json(allCities);
     } catch (error) {
         res.status(400).json({error: error.message});
     }
+
 }
 
 const getCity = async (req, res) => {

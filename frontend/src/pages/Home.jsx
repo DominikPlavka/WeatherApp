@@ -43,11 +43,11 @@ const Home = () => {
                 }
             );
 
-            if (!response.ok) {
-                throw new Error('There was a problem to fetch data');
-            }
+            console.log(response)
 
             const data = await response.json();
+            
+            console.log(data)
 
             if (response.ok) {
                 dispatch({ type: "GET_CITIES", payload: data })
