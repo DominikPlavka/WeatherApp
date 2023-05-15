@@ -17,6 +17,7 @@ const Home = () => {
     const [units, setUnits] = useState('metric');
     const [weather, setWeather] = useState(null);
     const [conditions, setConditions] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -33,6 +34,8 @@ const Home = () => {
 
     const { cities, dispatch } = useCitiesContext();
     const { user } = useAuthContext();
+
+    console.log(error)
 
     useEffect(() => {
         const getCities = async () => {
@@ -63,13 +66,16 @@ const Home = () => {
                 <div className='top-cities'>
                     {cities &&
                         cities.map((city, index) => (
-                            <TopCity key={index} city={city} />
+                            <TopCity key={index} city={city} setQuery={setQuery} setError={setError} />
                         ))}
+
                 </div>
+                {error && <p>{error}</p>}
                 <SearchBar setQuery={setQuery} />
                 {weather && (
                     <div>
-                        <MainTemp weather={weather} />
+                        <MainTemp weather={weather} setError={setError} />
+
                         <Video conditions={conditions} />
                         <AdditionalInfo weather={weather} />
                         <Forecast weather={weather} />

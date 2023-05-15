@@ -3,7 +3,7 @@ import "./TopCity.css"
 import { useAuthContext } from "../hooks/useAuthContext"
 import { useCitiesContext } from "../hooks/useCitiesContext"
 
-const TopCity = ({ city }) => {
+const TopCity = ({ city, setQuery, setError }) => {
 
     const { user } = useAuthContext()
     const { dispatch } = useCitiesContext();
@@ -27,13 +27,15 @@ const TopCity = ({ city }) => {
         const deletedCity = await response.json();
 
         dispatch({ type: "DELETE_CITY", payload: deletedCity })
+
+        setError(null);
     }
 
     return (
         <div className="cities-container">
             <div className="cities">
-                <p>{city.city}</p>
-                <button className="delete"><FiTrash2 style={iconStyle} onClick={handleClick} /></button>
+                <button className="city button-style" onClick={() => setQuery({ q: city.city })}>{city.city}</button>
+                <button className="button-style"><FiTrash2 style={iconStyle} onClick={handleClick} /></button>
             </div>
         </div>
     )
