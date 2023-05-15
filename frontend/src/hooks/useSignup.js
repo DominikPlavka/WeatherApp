@@ -23,7 +23,7 @@ export const useSignup = () => {
             setError(json.error);
         }
         if (response.ok) {
-            localStorage.setItem('User', JSON.stringify(json));
+            localStorage.setItem('user', JSON.stringify(json));
             
             dispatch({type: 'LOGIN', payload: json});
 

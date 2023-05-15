@@ -25,7 +25,7 @@ export const useLogin = () => {
             setError(json.error);
         }
         if (response.ok) {
-            localStorage.setItem('User', JSON.stringify(json));
+            localStorage.setItem('user', JSON.stringify(json));
             
             dispatch({type: 'LOGIN', payload: json});
 
@@ -33,5 +33,5 @@ export const useLogin = () => {
         }
     }
 
-    return {login, isLoading, error};
+    return { login, isLoading, error };
 };

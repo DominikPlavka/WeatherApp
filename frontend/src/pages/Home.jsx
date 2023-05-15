@@ -29,7 +29,7 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
-    /////////////////// TEMP DATA FOR CITIES - FETCH ALL DATA
+    /////////////////// DATA FOR CITIES - FETCH ALL DATA
 
     const { cities, dispatch } = useCitiesContext();
     const { user } = useAuthContext();
