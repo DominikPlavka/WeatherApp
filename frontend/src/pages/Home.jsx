@@ -35,8 +35,6 @@ const Home = () => {
     const { cities, dispatch } = useCitiesContext();
     const { user } = useAuthContext();
 
-    console.log(error)
-
     useEffect(() => {
         const getCities = async () => {
             const response = await fetch('/api/city',
@@ -51,11 +49,14 @@ const Home = () => {
 
             const data = await response.json();
 
-            if (user) {
+            if (response.ok) {
                 dispatch({ type: "GET_CITIES", payload: data })
             }
         }
-        getCities()
+        if (user) {
+            getCities()
+        }
+        
     }, [user, dispatch])
 
     //////////////////
