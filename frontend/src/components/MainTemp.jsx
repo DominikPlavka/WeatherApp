@@ -28,7 +28,7 @@ const MainTemp = ({ weather: { temp, feels_like, name, country, details, icon, s
         }
 
         const addFavoriteCity = async () => {
-            const response = await fetch('/api/city', {
+            const response = await fetch(process.env.REACT_APP_URL + '/api/city', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",

@@ -12,7 +12,7 @@ const TopCity = ({ city, setQuery, setError }) => {
 
     const handleClick = async () => {
 
-        const response = await fetch('/api/city/' + city._id,
+        const response = await fetch(process.env.REACT_APP_URL + '/api/city/' + city._id,
             {
                 method: "DELETE",
                 headers: {

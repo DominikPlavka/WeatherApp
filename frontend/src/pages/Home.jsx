@@ -37,17 +37,13 @@ const Home = () => {
 
     useEffect(() => {
         const getCities = async () => {
-            const response = await fetch('/api/city',
+            const response = await fetch(process.env.REACT_APP_URL + '/api/city',
                 {
                     headers: { Authorization: `Bearer ${user.token}` },
                 }
             );
 
-            console.log(response)
-
             const data = await response.json();
-            
-            console.log(data)
 
             if (response.ok) {
                 dispatch({ type: "GET_CITIES", payload: data })
