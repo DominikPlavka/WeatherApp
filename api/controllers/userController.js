@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config({ path: "../.env" });
 
 const createToken = (_id) => {
-    return jwt.sign({ _id }, process.env.REACT_APP_SECRET, { expiresIn: '1h' }); // payload, secret, expires 
+    return jwt.sign({ _id }, process.env.REACT_APP_SECRET, { expiresIn: '1d' }); // payload, secret, expires 
 }
 
 const loginUser = async (req, res) => {

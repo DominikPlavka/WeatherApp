@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
-
 export const useLogin = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
@@ -11,7 +10,7 @@ export const useLogin = () => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(process.env.REACT_APP_BACKEND + '/api/user/login', {
+        const response = await fetch('/api/user/login', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -28,11 +27,11 @@ export const useLogin = () => {
         if (response.ok) {
             localStorage.setItem('user', JSON.stringify(json));
             
-            dispatch({type: 'login', payload: json});
+            dispatch({type: 'LOGIN', payload: json});
 
             setIsLoading(false);
         }
     }
 
-    return {login, isLoading, error};
+    return { login, isLoading, error };
 };

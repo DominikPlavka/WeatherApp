@@ -10,7 +10,7 @@ const SearchBar = ({ setQuery }) => {
         if (city !== '') {
             setQuery({ q: city });
         }
-        setCity("");
+        setCity(""); // cleaning bar after handling submit
     };
 
     return (
@@ -22,10 +22,10 @@ const SearchBar = ({ setQuery }) => {
                     onChange={(e) => setCity(e.currentTarget.value)}
                     placeholder="Search location"
                     name="search" />
-                    <button
-                        type="submit"
-                        className="submit"
-                    >Search</button>
+                    
+                    <button type="submit" className="submit">
+                        Search
+                    </button>
                 </div>
             </form>
         </div>

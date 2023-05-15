@@ -22,3 +22,9 @@
 p {
     font-size: 18px;
 }
+
+.top-cities {
+    width: 100%;
+    display: flex;
+    gap: 2em;
+}

@@ -3,12 +3,12 @@ const cors = require("cors");
 
 const express = require('express');
 const app = express();
-const weatherRoutes = require('./routes/weather');
+const cityRoutes = require('./routes/city');
 const userRoutes = require('./routes/user');
 const mongoose = require('mongoose');
 
 // middleware
-app.use(express.json());
+app.use(express.json())
 
 app.use((req, res, next) => {
     console.log(req.path, req.method)
@@ -25,11 +25,9 @@ app.use(cors({
 
 app.options("*", cors());
 
-//app.use(cors());
-
 //routes
-app.use('/api/weather', weatherRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/city', cityRoutes);
 
 //connecting to DB
 mongoose.connect(process.env.REACT_APP_MONGODB)

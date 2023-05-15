@@ -5,20 +5,23 @@ import getFormattedWeatherData from '../components/services/weatherServices'
 import MainTemp from '../components/MainTemp'
 import Forecast from '../components/Forecast'
 import { useEffect, useState } from 'react'
-import Heading from '../components/Heading'
+import { useCitiesContext } from '../hooks/useCitiesContext'
+import { useAuthContext } from '../hooks/useAuthContext'
+import TopCity from '../components/TopCity'
 import AdditionalInfo from '../components/AdditionalInfo'
 import "./Home.css"
 
 const Home = () => {
 
-    const [query, setQuery] = useState({q: "Spisska Nova Ves"});
+    const [query, setQuery] = useState({ q: "Spisska Nova Ves" });
     const [units, setUnits] = useState('metric');
     const [weather, setWeather] = useState(null);
     const [conditions, setConditions] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchWeather = async () => {
-            await getFormattedWeatherData({...query, units})
+            await getFormattedWeatherData({ ...query, units })
                 .then((data) => {
                     setWeather(data);
                     setConditions(data.details);
@@ -27,24 +30,60 @@ const Home = () => {
         fetchWeather();
     }, [query, units]);
 
-    console.log(weather)
+    /////////////////// DATA FOR CITIES - FETCH ALL DATA
+
+    const { cities, dispatch } = useCitiesContext();
+    const { user } = useAuthContext();
+
+    console.log(error)
+
+    useEffect(() => {
+        const getCities = async () => {
+            const response = await fetch('/api/city',
+                {
+                    headers: { Authorization: `Bearer ${user.token}` },
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error('There was a problem to fetch data');
+            }
+
+            const data = await response.json();
+
+            if (user) {
+                dispatch({ type: "GET_CITIES", payload: data })
+            }
+        }
+        getCities()
+    }, [user, dispatch])
+
+    //////////////////
 
     return (
-            <div className='container'>
-                <div className='search-container'>
-                    <Heading heading="1" text='Search Weather App' />
-                    <SearchBar setQuery={setQuery} />
-                    { weather && (
-                        <div>
-                            <MainTemp weather={weather} />
-                            <Video conditions={conditions} />
-                            <AdditionalInfo weather={weather} />
-                            <Forecast weather={weather}/>
-                        </div>
-                    )}
-                    <Note />
+        <div className='container'>
+            <div className='search-container'>
+                <div className='top-cities'>
+                    {cities &&
+                        cities.map((city, index) => (
+                            <TopCity key={index} city={city} setQuery={setQuery} setError={setError} />
+                        ))}
+
                 </div>
+                {error && <p>{error}</p>}
+                <SearchBar setQuery={setQuery} />
+                {weather && (
+                    <div>
+                        <MainTemp weather={weather} setError={setError} />
+
+                        <Video conditions={conditions} />
+                        <AdditionalInfo weather={weather} />
+                        <Forecast weather={weather} />
+                    </div>
+                )}
+                <Note />
             </div>
+        </div>
     )
 }
 

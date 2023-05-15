@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
-
 export const useSignup = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
@@ -13,7 +12,7 @@ export const useSignup = () => {
 
         const response = await fetch(process.env.REACT_APP_BACKEND + '/api/user/signup', {
             method: 'POST',
-            headers: {'Content-type': 'application/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, password})
         });
 
@@ -26,7 +25,7 @@ export const useSignup = () => {
         if (response.ok) {
             localStorage.setItem('user', JSON.stringify(json));
             
-            dispatch({type: 'login', payload: json});
+            dispatch({type: 'LOGIN', payload: json});
 
             setIsLoading(false);
         }
